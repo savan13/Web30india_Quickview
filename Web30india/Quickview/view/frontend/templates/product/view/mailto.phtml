@@ -1,0 +1,34 @@
+<?php
+/**
+ * Web30india Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://web30india.com/web30india-Commerce-License.txt
+ *
+ * @category   Web30india
+ * @package    Web30india_Quickview
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2009-2022 Web30india Commerce Co. (https://web30india.com )
+ * @license    https://web30india.com/web30india-Commerce-License.txt
+ */
+// @codingStandardsIgnoreFile
+?>
+<?php
+/**
+ * @var \Web30india\Quickview\Block\Product\Social $block
+ */
+?>
+<?php $_product = $block->getProduct() ?>
+<?php if ($block->getConfigShowEmail()): ?>
+    <a href="<?= $block->escapeUrl($this->helper(Magento\Catalog\Helper\Product::class)->getEmailToFriendUrl($_product)) ?>"
+       class="action mailto friend"><span><?= $block->escapeHtml(__('Email')) ?></span></a>
+<?php endif; ?>
+<script type="text/x-magento-init">
+    {
+        "*": {"Web30india_Quickview/js/wishlist":{}}
+    }
+</script>
